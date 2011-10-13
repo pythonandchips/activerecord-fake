@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Colin Gemmell"]
   s.email       = ["pythonandchips@gmail.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Fake object for using when you do not want to use a real one with associations}
+  s.description = %q{Fake object for using when you do not want to use a real one with associations}
 
   s.rubyforge_project = "active_record_fake"
 
