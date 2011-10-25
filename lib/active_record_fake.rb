@@ -2,7 +2,7 @@ require "active_record_fake/version"
 
 module ActiveRecord
   class Fake
-    attr_accessor :has_one_association, :has_one_options, :validates_associated_value, :saved
+    attr_accessor :has_one_association, :has_one_options, :validates_associated_value, :saved, :id
 
 
     def initialize(param={})
@@ -28,6 +28,9 @@ module ActiveRecord
 
     def self.fakes(class_name)
       @fake_class = Object.const_get(class_name.to_s.classify)
+    end
+
+    def self.belongs_to class_name, *args
     end
 
     def self.has_many class_name, *args
