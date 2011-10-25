@@ -48,15 +48,15 @@ module ActiveRecord
 
     def self.has_one class_name, *args
       self.instance_eval do
-        define_method klass_name do |*args|
-          self.instance_variable_get(:"@#{klass_name}")
+        define_method class_name do |*args|
+          self.instance_variable_get(:"@#{class_name}")
         end
-        define_method "#{klass_name}=" do |*args|
-          self.instance_variable_set(:"@#{klass_name}", *args)
+        define_method "#{class_name}=" do |*args|
+          self.instance_variable_set(:"@#{class_name}", *args)
         end
       end
       @@attributes ||= []
-      @@attributes << klass_name
+      @@attributes << class_name
     end
 
     def self.base_class
