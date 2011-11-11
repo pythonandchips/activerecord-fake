@@ -33,7 +33,7 @@ module ActiveRecord
     def self.belongs_to class_name, *args
     end
 
-    def self.has_many class_name, *args
+    def self.has_many klass_name, *args
       self.instance_eval do
         define_method klass_name do |*args|
           self.instance_variable_get(:"@#{klass_name}")
