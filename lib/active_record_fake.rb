@@ -30,10 +30,16 @@ module ActiveRecord
       @fake_class = Object.const_get(class_name.to_s.classify)
     end
 
+    def has_many_association_to(klass_name)
+      @@has_many_association_to.include?(klass_name)
+    end
+
     def self.belongs_to class_name, *args
     end
 
     def self.has_many klass_name, *args
+      @@has_many_associations ||= []
+      @@has_many_associations << klass_name
       self.instance_eval do
         define_method klass_name do |*args|
           self.instance_variable_get(:"@#{klass_name}")
