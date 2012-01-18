@@ -4,7 +4,6 @@ module ActiveRecord
   class Fake
     attr_accessor :has_one_association, :has_one_options, :validates_associated_value, :saved, :id
 
-
     def initialize(param={})
       param.each_pair do |key, value|
         if self.respond_to?("#{key}=")
